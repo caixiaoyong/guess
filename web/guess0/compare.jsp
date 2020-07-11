@@ -13,9 +13,9 @@
 <body>
 <%
     request.setCharacterEncoding("UTF-8");
-    String userNum=request.getParameter("userNumber");
+    String userNum=request.getParameter("userNumber");//String 类型
     int userNumber=(Integer) Integer.parseInt(userNum);
-    int randomNumber=(Integer)session.getAttribute("randomNumber");
+    int randomNumber=(Integer)session.getAttribute("randomNumber");//object类型转integer类型
     if (userNumber<=99&&userNumber>=0){
         if (userNumber==randomNumber){
             session.setAttribute("message","you are right,reset random");
@@ -23,11 +23,11 @@
             response.sendRedirect("index.jsp");
         }
         if (userNumber>randomNumber){
-            session.setAttribute("message","your input"+userNumber+",large,reset input"+randomNumber);
+            session.setAttribute("message","your input "+userNumber+" is large,reset input "+randomNumber);
             response.sendRedirect("index.jsp");
         }
      if (userNumber<randomNumber){
-    session.setAttribute("message","your input"+userNumber+",small,reset input"+randomNumber);
+    session.setAttribute("message","your input "+userNumber+" is small,reset input "+randomNumber);
     response.sendRedirect("index.jsp");
     }
     }else{

@@ -30,7 +30,7 @@
       session.setAttribute("randomNumber",(int)(Math.random()*100));
   %>
   <form action="compare.jsp" method="post">
-    <table border="0" align="left">
+    <table border="1" align="left">
       <tr>
         <td>欢迎来玩猜数字--</td>
       </tr>
